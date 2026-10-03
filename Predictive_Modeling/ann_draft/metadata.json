@@ -1,0 +1,44 @@
+{
+  "status": "draft_validation",
+  "feature_columns": [
+    "SeniorCitizen",
+    "tenure",
+    "MonthlyCharges",
+    "EstimatedTotalSpend",
+    "NumActiveServices",
+    "AvgMonthlyChargePerService",
+    "gender_Male",
+    "Dependents_Yes",
+    "PhoneService_Yes",
+    "MultipleLines_Yes",
+    "InternetService_Fiber optic",
+    "Contract_One year",
+    "Contract_Two year",
+    "TenureGroup_Established",
+    "TenureGroup_Loyal",
+    "TenureGroup_Veteran"
+  ],
+  "architecture": [
+    16,
+    32,
+    16,
+    1
+  ],
+  "threshold": 0.5,
+  "seed": 42,
+  "best_epoch": 17,
+  "validation_rows": 1079,
+  "tensorflow_version": "2.20.0",
+  "confusion_matrix": [
+    [
+      715,
+      77
+    ],
+    [
+      160,
+      127
+    ]
+  ],
+  "preprocessing": "Tyler's supplied scaled features",
+  "limitation": "Scaling fitted before internal validation split"
+}
