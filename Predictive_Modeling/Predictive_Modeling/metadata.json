@@ -1,0 +1,79 @@
+{
+  "status": "review_release_pending_team_feedback",
+  "data_version": "6d1cb202e66568114f8d9a34a4cdeeb3dffabed3",
+  "source_sha256": {
+    "ATS_preprocessed_dataset.csv": "35e261629dea03b233168cb0417501c95511601fdb358656b8ae7208de459baf",
+    "ATS_y_train.csv": "f3476da8d9d640a0abb7674d913e23e77acd4917389b6e75d58f9115b519d2af",
+    "ATS_y_test.csv": "e900cf91b77e719987a4f2b9a744f07c07648112c32f9eb56cb747755ed1660c",
+    "ATS_X_train_scaled.csv": "9ba76adb70e76193934fcc7a1c1b8b0c4be7e0e0afe7f4d81cc27e1268870c51",
+    "ATS_X_test_scaled.csv": "43499cc2611115545bc39e2e94b0f99e784dab5cbfb52712b8909e0e77691298"
+  },
+  "feature_columns": [
+    "SeniorCitizen",
+    "tenure",
+    "MonthlyCharges",
+    "EstimatedTotalSpend",
+    "NumActiveServices",
+    "AvgMonthlyChargePerService",
+    "gender_Male",
+    "Dependents_Yes",
+    "PhoneService_Yes",
+    "MultipleLines_Yes",
+    "InternetService_Fiber optic",
+    "Contract_One year",
+    "Contract_Two year",
+    "TenureGroup_Established",
+    "TenureGroup_Loyal",
+    "TenureGroup_Veteran"
+  ],
+  "input_contract": "Encoded unscaled features matching Tyler preprocessed dataset; exclude Churn",
+  "configuration": {
+    "name": "weighted_regularised_32_16",
+    "hidden": [
+      32,
+      16
+    ],
+    "dropout": 0.2,
+    "l2": 0.001,
+    "weighted": true
+  },
+  "threshold": 0.45,
+  "seed": 42,
+  "comparison_seeds": [
+    42,
+    43,
+    44
+  ],
+  "selection_rule": "Highest mean validation F1; ties higher precision then nearest 0.50 threshold",
+  "best_epoch": 41,
+  "training_rows": 4313,
+  "validation_rows": 1079,
+  "test_rows": 1349,
+  "refit_on_all_training_rows": false,
+  "test_metrics": {
+    "accuracy": 0.6945885841363973,
+    "precision": 0.45714285714285713,
+    "recall": 0.8044692737430168,
+    "f1": 0.582995951417004
+  },
+  "test_confusion_matrix": [
+    [
+      649,
+      342
+    ],
+    [
+      70,
+      288
+    ]
+  ],
+  "test_roc_auc": 0.8127180941321052,
+  "test_average_precision": 0.5956938982375103,
+  "versions": {
+    "python": "3.13.15",
+    "tensorflow": "2.20.0",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1"
+  },
+  "run_id_utc": "20261005T040331Z"
+}
